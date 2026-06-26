@@ -1,0 +1,385 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #0f172a;
+  background: #fafafa;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 110px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  background: #fafafa;
+  font-family: Inter, system-ui, sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer components {
+  .section-band {
+    @apply py-20 md:py-28;
+  }
+
+  .section-eyebrow {
+    @apply inline-flex rounded-full border border-leaf-700/15 bg-leaf-50 px-3 py-2 text-xs font-black uppercase tracking-[0.18em] text-leaf-800;
+  }
+
+  .primary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full bg-leaf-700 px-6 py-3 text-sm font-black text-white shadow-lg shadow-leaf-700/25 transition hover:-translate-y-0.5 hover:bg-leaf-800 focus:outline-none focus:ring-4 focus:ring-leaf-700/25;
+  }
+
+  .secondary-button {
+    @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white px-6 py-3 text-sm font-black text-ink shadow-sm transition hover:-translate-y-0.5 hover:border-leaf-700 hover:text-leaf-800 focus:outline-none focus:ring-4 focus:ring-leaf-700/20;
+  }
+
+  .hero-cta {
+    @apply min-h-14 whitespace-nowrap px-3 text-center text-[0.68rem] leading-none sm:px-6 sm:text-sm;
+  }
+
+  .icon-button {
+    @apply grid h-11 w-11 place-items-center rounded-full border border-slate-200 bg-white/80 text-slate-700 shadow-sm transition hover:bg-leaf-700 hover:text-white focus:outline-none focus:ring-4 focus:ring-leaf-700/20;
+  }
+
+  .metric-card {
+    @apply rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .feature-card {
+    @apply rounded-lg border border-slate-200 bg-white p-6 shadow-sm transition;
+  }
+
+  .row-card {
+    @apply flex gap-4 rounded-lg border border-slate-200 bg-white p-5 shadow-sm;
+  }
+
+  .scheme-card {
+    @apply rounded-lg border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  .mini-button {
+    @apply min-h-10 rounded-full border border-slate-200 bg-slate-50 px-3 text-xs font-black text-slate-700 transition hover:border-leaf-700 hover:bg-leaf-700 hover:text-white focus:outline-none focus:ring-4 focus:ring-leaf-700/20;
+  }
+}
+
+.standard-mode.light-portal {
+  background: #fafafa;
+}
+
+.standard-mode.light-portal main {
+  background: #fafafa;
+}
+
+.standard-mode.light-portal .bg-paper {
+  background:
+    radial-gradient(circle at top left, rgba(214, 239, 216, 0.78), transparent 34rem),
+    #fafafa !important;
+}
+
+.standard-mode.light-portal .section-eyebrow {
+  background: #eef8ef;
+  border-color: rgba(27, 94, 32, 0.16);
+  color: #1b5e20;
+}
+
+.kisan-mode.light-portal {
+  background: #fff7c2;
+}
+
+.kisan-mode.light-portal main {
+  background: #fff7c2 !important;
+}
+
+.kisan-mode.light-portal .bg-paper,
+.kisan-mode.light-portal #home {
+  background:
+    linear-gradient(135deg, rgba(255, 224, 102, 0.95), rgba(255, 248, 204, 0.86)),
+    #fff7c2 !important;
+}
+
+.kisan-mode.light-portal .bg-white,
+.kisan-mode.light-portal .metric-card,
+.kisan-mode.light-portal .feature-card,
+.kisan-mode.light-portal .scheme-card,
+.kisan-mode.light-portal .row-card {
+  background-color: #fffdf0 !important;
+  border-color: #1f2937 !important;
+  border-width: 2px !important;
+  box-shadow: 0 12px 0 rgba(15, 23, 42, 0.12) !important;
+}
+
+.kisan-mode.light-portal header nav,
+.kisan-mode.light-portal .fixed.inset-x-0.top-0 {
+  background: rgba(255, 230, 92, 0.96) !important;
+  border-color: #111827 !important;
+}
+
+.kisan-mode.light-portal .section-eyebrow {
+  background: #111827 !important;
+  border-color: #111827 !important;
+  color: #fde047 !important;
+  letter-spacing: 0.08em;
+}
+
+.kisan-mode.light-portal .primary-button {
+  background: #111827 !important;
+  color: #fde047 !important;
+  box-shadow: 0 10px 0 rgba(15, 23, 42, 0.18) !important;
+}
+
+.kisan-mode.light-portal .secondary-button,
+.kisan-mode.light-portal .mini-button {
+  background: #ffffff !important;
+  border: 2px solid #111827 !important;
+  color: #111827 !important;
+}
+
+.kisan-hero h1 {
+  color: #000;
+}
+
+.kisan-metrics .metric-card {
+  border: 3px solid #000;
+  background: #fff8cc;
+}
+
+.feature-card-kisan {
+  border: 3px solid #0f172a;
+  background: #fff;
+}
+
+.dark-portal {
+  background: #060f0a;
+}
+
+.dark-portal main {
+  background:
+    radial-gradient(circle at 10% 0%, rgba(67, 160, 71, 0.14), transparent 30rem),
+    #060f0a !important;
+}
+
+.dark-portal .bg-paper {
+  background: #0b150f !important;
+}
+
+.dark-portal .bg-white {
+  background-color: #060f0a !important;
+}
+
+.dark-portal header nav,
+.dark-portal .fixed.inset-x-0.top-0 {
+  background: rgba(6, 15, 10, 0.9) !important;
+  border-color: rgba(253, 224, 71, 0.22) !important;
+}
+
+/* Accessible card background (forest-themed) instead of clashing dark blue */
+.dark-portal .metric-card,
+.dark-portal .feature-card,
+.dark-portal .scheme-card,
+.dark-portal .row-card {
+  background-color: #122217 !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25) !important;
+}
+
+.dark-portal .section-eyebrow {
+  background: rgba(253, 224, 71, 0.12) !important;
+  border-color: rgba(253, 224, 71, 0.28) !important;
+  color: #fde047 !important;
+}
+
+.dark-portal .text-ink,
+.dark-portal h1,
+.dark-portal h2,
+.dark-portal h3 {
+  color: #f8fafc !important;
+}
+
+.dark-portal .text-slate-800,
+.dark-portal .text-slate-700,
+.dark-portal .text-slate-600,
+.dark-portal .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+/* Secondary & mini buttons, inputs in dark mode */
+.dark-portal .secondary-button,
+.dark-portal .mini-button,
+.dark-portal input {
+  background-color: #182c20 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #f8fafc !important;
+}
+
+.dark-portal .secondary-button:hover,
+.dark-portal .mini-button:hover {
+  background-color: #1f3a2a !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+  color: #ffffff !important;
+}
+
+.dark-portal .primary-button {
+  background-color: #fde047 !important;
+  color: #0f172a !important;
+  box-shadow: 0 14px 40px rgba(253, 224, 71, 0.18) !important;
+}
+
+.dark-portal .primary-button:hover {
+  background-color: #fef08a !important;
+}
+
+/* Kisan Mode Dark Theme overrides */
+.kisan-mode.dark-portal main,
+.kisan-mode.dark-portal #home,
+.kisan-mode.dark-portal .bg-paper {
+  background:
+    linear-gradient(135deg, rgba(14, 22, 11, 0.98), rgba(48, 35, 5, 0.95)),
+    #0b1107 !important;
+}
+
+.kisan-mode.dark-portal .bg-white,
+.kisan-mode.dark-portal .metric-card,
+.kisan-mode.dark-portal .feature-card,
+.kisan-mode.dark-portal .scheme-card,
+.kisan-mode.dark-portal .row-card {
+  background-color: #15180d !important;
+  border: 2px solid rgba(253, 224, 71, 0.42) !important;
+  box-shadow: 0 12px 0 rgba(253, 224, 71, 0.08) !important;
+}
+
+/* Map unreadable green texts to bright accessible green/mint colors in dark mode */
+.dark-portal .text-leaf-700 {
+  color: #4ade80 !important;
+}
+.dark-portal .text-leaf-800 {
+  color: #86efac !important;
+}
+.dark-portal .text-leaf-900 {
+  color: #bbf7d0 !important;
+}
+
+/* Navbar Toggle / Language / Dark Mode Icon-buttons */
+.dark-portal .icon-button {
+  background-color: #182c20 !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  color: #cbd5e1 !important;
+}
+.dark-portal .icon-button:hover {
+  background-color: #1f3a2a !important;
+  color: #ffffff !important;
+}
+
+/* Mobile docks and dropdown menu elements */
+.dark-portal .bg-white\/75 {
+  background-color: rgba(17, 31, 22, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+.dark-portal .bg-white\/75 a {
+  color: #cbd5e1 !important;
+}
+.dark-portal .bg-white\/75 a:hover {
+  background-color: #1b5e20 !important;
+  color: #ffffff !important;
+}
+
+.dark-portal .bg-white\/95 {
+  background-color: rgba(17, 31, 22, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+}
+.dark-portal .bg-white\/95 a {
+  color: #cbd5e1 !important;
+}
+
+/* Mobile Phone Preview background */
+.dark-portal .bg-white\/80 {
+  background-color: rgba(17, 31, 22, 0.85) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Krishi Section Custom Dark Mode Styling */
+.dark-portal #krishi {
+  background-color: #0b150f !important;
+}
+.dark-portal #krishi .border-stone-300 {
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+.dark-portal #krishi .text-stone-500 {
+  color: #94a3b8 !important;
+}
+.dark-portal #krishi .bg-stone-100 {
+  background-color: #182c20 !important;
+}
+.dark-portal #krishi .bg-stone-100:hover {
+  background-color: #1f3a2a !important;
+}
+
+/* Scheme Modal Box Overrides for Accessibility */
+.dark-portal .bg-leaf-50 {
+  background-color: #13271a !important;
+}
+.dark-portal .bg-amber-50 {
+  background-color: #2d240d !important;
+}
+.dark-portal .text-amber-700 {
+  color: #fef08a !important;
+}
+.dark-portal .bg-slate-100 {
+  background-color: #182c20 !important;
+}
+
+/* QR Modal accessible style. The modal card is dark, only the matrix is white */
+.dark-portal .qr-matrix {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+.dark-portal .qr-matrix span.bg-ink {
+  background-color: #0f172a !important;
+}
+
+@media (max-width: 767px) {
+  [id] {
+    scroll-margin-top: 158px;
+  }
+
+  .kisan-mode .primary-button,
+  .kisan-mode .secondary-button {
+    min-height: 64px;
+    width: 100%;
+    font-size: 1.05rem;
+  }
+
+  .kisan-mode .hero-cta {
+    font-size: 0.68rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
